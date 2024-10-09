@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testhello
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testhello
+  template:
+    metadata:
+      labels:
+        app: testhello
+    spec:
+      containers:
+        - name: testhello
+          image: pramila188/testhello:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+  namespace: python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+        - name: python-app
+          image: pramila188/python-app:latest
+          ports:
+            - containerPort: 5000
