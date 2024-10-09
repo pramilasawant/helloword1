@@ -9,7 +9,7 @@ pipeline {
                 // Checkout the source code from the repository
                 checkout([$class: 'GitSCM', 
                 branches: [[name: '*/main']],  // Replace with your branch (e.g., main or dev)
-                userRemoteConfigs: [[url: 'https://github.com/your-repository-url.git']], // Replace with your repository URL
+                userRemoteConfigs: [[url: 'https://github.com/pramilasawant/helloword1.git']], // Replace with your repository URL
                 ])
             }
         }
