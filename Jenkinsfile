@@ -1,5 +1,5 @@
 @Library('Jenkins_pipeline_Library') _
-
+def call(Map config = [:]) {
 pipeline {
     agent any
 
